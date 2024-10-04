@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Gerenciamento Campanhas Banese</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="BANESE CARD LOGO - Fundo Transparente1.png" width="100">
+        <h1 p align="center">Gerenciamento de Campanhas - Banese</h1></p>
+    </header>
+
+    <div class="container">
+        <h2>Gerenciar Campanhas</h2>
+
+        <!-- Filtros -->
+        <div class="filters">
+            <div>
+                <label for="data">Período:</label>
+                <input type="date" id="data-inicio"> a
+                <input type="date" id="data-fim">
+            </div>
+
+            <div>
+                <label for="status">Status:</label>
+                <select id="status">
+                    <option value="ativa">Ativa</option>
+                    <option value="inativa">Inativa</option>
+                    <option value="encerrada">Encerrada</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="tipo-regra">Tipo de Regra:</label>
+                <select id="tipo-regra">
+                    <option value="regra1">Regra 1</option>
+                    <option value="regra2">Regra 2</option>
+                    <option value="regra3">Regra 3</option>
+                </select>
+            </div>
+
+            <button class="filter-button">Filtrar</button>
+        </div>
+
+        <!-- Tabela de campanhas -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome da Campanha</th>
+                    <th>Status</th>
+                    <th>Período</th>
+                    <th>Tipo de Regra</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Campanha de Verão</td>
+                    <td>Ativa</td>
+                    <td>01/01/2024 - 31/03/2024</td>
+                    <td>Regra 1</td>
+                    <td class="actions">
+                        <button>Editar</button>
+                        <button>Excluir</button>
+                        <button class="details-button">Ver Detalhes</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Promoção Aniversário</td>
+                    <td>Encerrada</td>
+                    <td>01/07/2023 - 31/07/2023</td>
+                    <td>Regra 2</td>
+                    <td class="actions">
+                        <button>Editar</button>
+                        <button>Excluir</button>
+                        <button class="details-button">Ver Detalhes</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Campanha de Férias</td>
+                    <td>Inativa</td>
+                    <td>01/12/2023 - 31/12/2023</td>
+                    <td>Regra 3</td>
+                    <td class="actions">
+                        <button>Editar</button>
+                        <button>Excluir</button>
+                        <button class="details-button">Ver Detalhes</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
