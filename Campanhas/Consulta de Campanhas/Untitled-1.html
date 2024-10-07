@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Campanhas de Cashback</title>
+    <link rel="stylesheet" href="syles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Campanhas de Cashback</h1>
+        
+        <form id="consultaForm">
+            <div class="form-group">
+                <label for="nomeCampanha">Nome da Campanha:</label>
+                <input type="text" id="nomeCampanha" name="nomeCampanha">
+            </div>
+
+            <div class="form-group">
+                <label for="descricaoCampanha">Descrição da Campanha:</label>
+                <input type="text" id="descricaoCampanha" name="descricaoCampanha">
+            </div>
+
+            <div class="form-group">
+                <label for="dataInicio">Data de Início:</label>
+                <input type="date" id="dataInicio" name="dataInicio">
+            </div>
+
+            <div class="form-group">
+                <label for="dataFinal">Data Final:</label>
+                <input type="date" id="dataFinal" name="dataFinal">
+            </div>
+
+            <div class="form-group">
+                <label>Status da Campanha:</label>
+                <select id="statusCampanha" name="statusCampanha">
+                    <option value="ativa">Ativa</option>
+                    <option value="inativa">Inativa</option>
+                    <option value="encerrada">Encerrada</option>
+                </select>
+            </div>
+
+            <button type="submit">Consultar</button>
+        </form>
+
+        <div id="resultados">
+            <h2>Resultados da Consulta</h2>
+            <p>Nenhum resultado encontrado.</p>
+        </div>
+
+        <div class="acoes">
+            <h3>Ações Disponíveis</h3>
+            <button onclick="verDetalhes()">Ver Detalhes</button>
+            <button onclick="editarCampanha()">Editar Campanha</button>
+            <button onclick="cadastrarNovaCampanha()">Cadastrar Nova Campanha</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
