@@ -1,0 +1,87 @@
+//* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Evitar problemas em telas menores */
+    background-color: #004A27;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal */
+.container {
+    width: 70%;
+    min-height: 100vh;
+    background-image: url('imagem.svg');
+    background-size: cover; /* Garante que a imagem ocupe toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Sobreposição escura para destacar o conteúdo */
+.content {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparência mais suave */
+    padding: 20px 40px;
+    border-radius: 10px;
+    max-width: 600px; /* Limita a largura máxima do conteúdo */
+    width: 90%; /* Para garantir que não ultrapasse em telas menores */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Adiciona sombra para destaque */
+}
+
+/* Estilizando o título */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Parágrafo descritivo */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Botões */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+/* Estilos individuais para os botões */
+.start {
+    background-color: #00C389;
+    color: white;
+}
+
+.learn-more {
+    background-color: transparent;
+    color: #00C389;
+    border: 2px solid #00C389;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #004A27;
+}
