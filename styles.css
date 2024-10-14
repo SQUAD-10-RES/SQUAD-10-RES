@@ -1,0 +1,147 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    background-color: #004A27;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal */
+.container {
+    width: 70%;
+    min-height: 100vh;
+    background-image: url('imagem.svg'); /* Certifique-se de que a imagem está no diretório correto */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Sobreposição escura para destacar o conteúdo */
+.content {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Botões */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.start {
+    background-color: #00C389;
+    color: white;
+}
+
+.learn-more {
+    background-color: transparent;
+    color: #00C389;
+    border: 2px solid #00C389;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #004A27;
+}
+
+/* Estilos para a tela de login */
+.login-form {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.login-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn.login-btn {
+    background-color: #00C389;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.btn.login-btn:hover {
+    background-color: white;
+    color: #004A27;
+}
+
+/* Estilos para o botão Voltar */
+.back-btn {
+    background-color: transparent;
+    color: #00C389;
+    border: 2px solid #00C389;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background-color: white;
+    color: #004A27;
+}
