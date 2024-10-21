@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .navbar {
+    background-color: #007B4E;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 120px;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-menu li {
+    display: inline;
+  }
+  
+  
+  .navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .app-screen {
+    max-width: 100vh;
+    margin: 100px auto 20px auto; 
+    background-color: #26f1a7;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .cashback-report {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .cashback-report h2 {
+    color: #444;
+  }
+  
+  .cashback-report h1 {
+    color: #007B4E;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    background-color: #007B4E;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .btn a {
+    color: white;
+  }
+  
+  .transaction-summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .transaction {
+    width: 45%;
+  }
+  
+  .transaction span {
+    display: block;
+    color: #888;
+  }
+  
+  .transaction h3 {
+    color: #444;
+  }
+  
+  .campaign-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 10vh;
+    margin-bottom: 20px;
+  }
+  
+  .campaign-reports {
+    margin-top: 20px;
+  }
+  
+  .campaign {
+    padding: 15px;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .campaign-status {
+    margin-top: 20px;
+  }
+  
