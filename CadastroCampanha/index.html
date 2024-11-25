@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Nova Campanha</title>
+    <link rel="stylesheet" href="cadastro_campanha.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <img src="../logo.png" alt="Banese Card Logo" width="120">
+        </div>
+        <div class="navbar-menu">
+            <a href="index.html" class="menu-link" id="cadastrar-link">Cadastrar Campanha</a>
+            <a href="../Tela.html" class="menu-link" id="gerenciar-link">Gerenciar Campanha</a>
+        <div class="navbar-user">
+            <div class="user-circle" onclick="toggleUserMenu()">
+                <img src="../perfil.png" alt="Foto de Perfil" class="user-photo">
+            </div>
+            <div id="user-menu" class="user-menu">
+                <a href="#">Configurações</a>
+                <a href="index.html" class="logout-link">Sair</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Cadastrar Campanha</h2>
+        <form id="cadastro-campanha-form">
+            <fieldset>
+                <legend>Informações Básicas</legend>
+                <div>
+                    <label for="nome-campanha">Nome da Campanha:</label>
+                    <input type="text" id="nome-campanha" name="nome-campanha" required>
+                </div>
+                <div>
+                    <label for="descricao-campanha">Descrição da Campanha:</label>
+                    <textarea id="descricao-campanha" name="descricao-campanha" rows="3" required></textarea>
+                </div>
+                <div>
+                    <label for="data-inicio">Data Inicial:</label>
+                    <input type="date" id="data-inicio" name="data-inicio" required>
+                </div>
+                <div>
+                    <label for="data-fim">Data Final:</label>
+                    <input type="date" id="data-fim" name="data-fim" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Status</legend>
+                <div>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="ativa">Ativa</option>
+                        <option value="inativa">Inativa</option>
+                        <option value="encerrada">Encerrada</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Regras</legend>
+                <div>
+                    <label for="tipo-regra">Tipo de Regra:</label>
+                    <select id="tipo-regra" name="tipo-regra" onchange="atualizarRegraInput()" required>
+                        <option value="valor-fixo">Valor Fixo</option>
+                        <option value="percentual">Percentual</option>
+                    </select>
+                </div>
+                <div class="inline-field" id="campo-valor-fixo" style="display: none;">
+                    <label for="valor-fixo">Valor Fixo (R$):</label>
+                    <input type="number" id="valor-fixo" name="valor-fixo" min="0" step="0.01" required>
+                </div>
+                <div class="inline-field" id="campo-percentual" style="display: none;">
+                    <label for="percentual">Percentual (%):</label>
+                    <input type="number" id="percentual" name="percentual" min="0" max="100" step="0.1" required>
+                </div>
+            </fieldset>
+
+            <button type="button" class="associate-button" onclick="abrirPopup()">Associar Portadores</button>
+
+            <fieldset>
+                <legend>Imagem da Campanha</legend>
+                <div class="upload-field">
+                    <label for="imagem-campanha">Escolher imagem:</label>
+                    <input type="file" id="imagem-campanha" name="imagem-campanha" accept="image/*" required>
+                </div>
+            </fieldset>
+
+
+            <div class="form-actions">
+                <button type="button" onclick="salvarCampanha()" class="save-button">Salvar</button>
+                <button type="reset" class="delete-button">Excluir</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div id="portador-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="fecharPopup()">&times;</span>
+            <h2>Associar Portador</h2>
+            <form id="associar-portador-form">
+                <div>
+                    <label for="nome-portador">Nome do Portador:</label>
+                    <input type="text" id="nome-portador" name="nome-portador" required>
+                </div>
+                <div>
+                    <label for="numero-cartao">Número do Cartão:</label>
+                    <input type="text" id="numero-cartao" name="numero-cartao" required>
+                </div>
+                <button type="button" onclick="associarPortador()">Associar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="cadastro_campanha.js"></script>
+</body>
+</html>

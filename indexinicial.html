@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Campanhas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Conteúdo principal -->
+        <div class="content-box">
+            <h1>Sistema de Gerenciamento de Campanhas de Cashback Banese</h1>
+            <p>Gerencie campanhas de cashback de forma eficiente e intuitiva para o Banese Card.</p>
+            <div class="buttons">
+                <a href="#" class="btn start" id="startBtn">Começar</a>
+                <a href="#" class="btn learn-more">Saiba Mais</a>
+            </div>
+        </div>
+
+        <!-- Tela de Login -->
+        <div class="login-form" id="loginForm" style="display: none;">
+            <h2>Login Administrador</h2>
+            <form id="loginFormElement">
+                <div class="input-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn login-btn">Entrar</button>
+            </form>
+            <button class="btn back-btn" id="backBtn">Voltar</button>
+        </div>
+    </div>
+
+    <script>
+        // Seleção de elementos
+        const startBtn = document.getElementById('startBtn');
+        const backBtn = document.getElementById('backBtn');
+        const loginForm = document.getElementById('loginForm');
+        const contentBox = document.querySelector('.content-box');
+        const loginFormElement = document.getElementById('loginFormElement');
+
+        // Alternar para a tela de login
+        startBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            contentBox.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+
+        // Alternar de volta para a tela inicial
+        backBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            contentBox.style.display = 'block';
+        });
+
+        // Evento de submissão do formulário de login
+        loginFormElement.addEventListener('submit', function (e) {
+            e.preventDefault(); // Evita o comportamento padrão de recarregar a página
+
+            // Dados do formulário
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simulação de validação simples
+            if (username === 'admin' && password === '1234') {
+                // Redirecionar para a página desejada
+                window.location.href = 'Tela.html';
+            } else {
+                alert('Usuário ou senha inválidos. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+</html>

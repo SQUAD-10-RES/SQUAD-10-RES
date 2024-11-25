@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Campanha</title>
+    <link rel="stylesheet" href="editar_campanha.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <img src="../logo.png" alt="Banese Card Logo" width="120">
+        </div>
+        <div class="navbar-menu">
+            <a href="../CadastroCampanha/index.html" class="menu-link" id="cadastrar-link">Cadastrar Campanha</a>
+            <a href="../Tela.html" class="menu-link" id="gerenciar-link">Gerenciar Campanha</a>
+        <div class="navbar-user">
+            <div class="user-circle" onclick="toggleUserMenu()">
+                <img src="../perfil.png" alt="Foto de Perfil" class="user-photo">
+            </div>
+            <div id="user-menu" class="user-menu">
+                <a href="#">Configurações</a>
+                <a href="index.html" class="logout-link">Sair</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Editar Campanha</h2>
+        <form id="edit-campaign-form">
+
+            <fieldset>
+                <legend>Informações Básicas</legend>
+                <div>
+                    <label for="nome-campanha">Nome da Campanha:</label>
+                    <input type="text" id="nome-campanha" name="nome-campanha" required>
+                </div>
+                <div>
+                    <label for="descricao-campanha">Descrição da Campanha:</label>
+                    <textarea id="descricao-campanha" name="descricao-campanha" required></textarea>
+                </div>
+                <div>
+                    <label for="data-inicio">Data Inicial:</label>
+                    <input type="date" id="data-inicio" name="data-inicio" required>
+                </div>
+                <div>
+                    <label for="data-fim">Data Final:</label>
+                    <input type="date" id="data-fim" name="data-fim" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Status</legend>
+                <div>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="ativa">Ativa</option>
+                        <option value="inativa">Inativa</option>
+                        <option value="encerrada">Encerrada</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Regras</legend>
+                <div>
+                    <label for="tipo-regra">Tipo de Regra:</label>
+                    <select id="tipo-regra" name="tipo-regra" onchange="toggleRegraInputs()" required>
+                        <option value="valor-fixo">Valor Fixo</option>
+                        <option value="percentual">Percentual</option>
+                    </select>
+                </div>
+                <div id="input-valor-fixo" style="display: none;">
+                    <label for="valor-fixo">Valor Fixo (R$):</label>
+                    <input type="number" id="valor-fixo" name="valor-fixo">
+                </div>
+                <div id="input-percentual" style="display: none;">
+                    <label for="percentual">Percentual (%):</label>
+                    <input type="number" id="percentual" name="percentual">
+                </div>
+            </fieldset>
+
+
+            <button type="button" class="associate-button" onclick="openPopup()">Editar Portadores</button>
+            <button type="button" onclick="salvarEdicao()" class="save-button">Salvar</button>
+        </form>
+    </div>
+
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Editar Portadores</h2>
+
+            <div class="portadores-list" id="portadores-list"></div>
+
+            <form id="add-portador-form" style="display: none;">
+                <div>
+                    <label for="nome-portador">Nome do Portador:</label>
+                    <input type="text" id="nome-portador" name="nome-portador" required>
+                </div>
+                <div>
+                    <label for="numero-cartao">Número do Cartão:</label>
+                    <input type="text" id="numero-cartao" name="numero-cartao" required>
+                </div>
+                <button type="button" onclick="adicionarPortador()" class="save-button">Adicionar Portador</button>
+            </form>
+
+            <button type="button" id="show-add-form" onclick="mostrarFormularioAdicionarPortador()"
+                class="save-button">Adicionar Novo Portador</button>
+        </div>
+    </div>
+
+    <script src="editar_campanha.js"></script>
+</body>
+
+</html>

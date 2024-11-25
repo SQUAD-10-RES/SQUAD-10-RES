@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Campanhas - Banese</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-placeholder">
+            <img src="logo2.png" alt="Banese Card Logo" width="120">
+        </div>
+        <div class="navbar-menu">
+            <a href="CadastroCampanha/index.html" class="menu-link" id="cadastrar-link">Cadastrar Campanha</a>
+            <a href="Tela.html" class="menu-link" id="gerenciar-link">Gerenciar Campanha</a>
+        <div class="navbar-user">
+            <div class="user-circle" onclick="toggleUserMenu()">
+                <img src="perfil.png" alt="Foto de Perfil" class="user-photo">
+            </div>
+            <div id="user-menu" class="user-menu">
+                <a href="#">Configurações</a>
+                <a href="index.html" class="logout-link">Sair</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Gerenciar Campanhas</h2>
+
+        <div class="filters">
+            <div>
+                <label for="data">Período:</label>
+                <input type="date" id="data-inicio"> a
+                <input type="date" id="data-fim"> 
+            </div>
+
+            <div>
+                <label for="status">Status:</label>
+                <select id="status">
+                    <option value="ativa">Ativa</option>
+                    <option value="inativa">Inativa</option>
+                    <option value="encerrada">Encerrada</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="tipo-regra">Tipo de Regra:</label>
+                <select id="tipo-regra">
+                    <option value="regra1">Regra 1</option>
+                    <option value="regra2">Regra 2</option>
+                    <option value="regra3">Regra 3</option>
+                </select>
+            </div>
+
+            <button class="register-button" onclick="window.location.href='CadastroCampanha/index.html'">Cadastrar</button>
+            <button class="filter-button">Filtrar</button>
+        </div>
+
+        <div class="campaign-cards" id="campaign-cards">
+        </div>
+    </div>
+<div id="visualizar-popup" class="popup-overlay">
+    <div class="popup-content">
+        <span class="close-button" onclick="fecharVisualizarPopup()">&times;</span>
+        <img id="popup-img" src="" alt="Imagem da Campanha" class="popup-img">
+        <h2 id="popup-nome"></h2>
+        <p id="popup-descricao"></p>
+        <p id="popup-periodo"></p>
+        <p id="popup-regra"></p>
+        <p id="popup-status"></p>
+        <div id="popup-portadores" class="popup-portadores"></div>
+    </div>
+</div>
+
+
+    <script src="tela.js"></script>
+</body>
+</html>
